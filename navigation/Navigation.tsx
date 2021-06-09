@@ -1,29 +1,30 @@
 import React from 'react';
+import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Histo from '../views/Histo';
-import Scan from '../views/Scan';
-import Search from '../views/Search';
-import Profile from '../views/Profile';
+import HistoStackScreen from './HistoStackScreen';
+import ScanStackScreen from './ScanStackScreen';
+import SearchStackScreen from './SearchStackScreen';
+import ProfileStackScreen from './ProfileStackScreen';
 
-export type RottomTabParamList = {
-    Histo: undefined
-    Scan: undefined
-    Search: undefined
-    Profile: { userId: string }
-};
+export type RootStackParamList = {
+    Histo: undefined,
+    Scan: undefined,
+    Search: undefined,
+    Profile: undefined,
+}
 
-const Tab = createBottomTabNavigator<RottomTabParamList>();
+const Stack = createBottomTabNavigator<RootStackParamList>();
 
 export default function Navigation() {
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName="Histo">
-                <Tab.Screen name="Histo" component={Histo} />
-                <Tab.Screen name="Scan" component={Scan} />
-                <Tab.Screen name="Search" component={Search} />
-                <Tab.Screen name="Profile" component={Profile} />
-            </Tab.Navigator>
+            <Stack.Navigator initialRouteName="Histo">
+                <Stack.Screen name="Histo" component={HistoStackScreen} />
+                <Stack.Screen name="Scan" component={ScanStackScreen} />
+                <Stack.Screen name="Search" component={SearchStackScreen} />
+                <Stack.Screen name="Profile" component={ProfileStackScreen} />
+            </Stack.Navigator>
         </NavigationContainer>
     )
 }

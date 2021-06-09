@@ -1,22 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { RouteProp } from '@react-navigation/native';
-import { RottomTabParamList } from '../navigation/Navigation';
+import { useNavigation } from '@react-navigation/core';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
-type HistoScreenNavigationProp = BottomTabScreenProps<RottomTabParamList, 'Histo'>;
-type HistoScreenRouteProp = RouteProp<RottomTabParamList, 'Histo'>;
+export default function Histo() {
 
-type Props = {
-    route: HistoScreenRouteProp
-    navigation: HistoScreenNavigationProp
-};
+    const { navigate } = useNavigation()
 
-export default function Histo({ route, navigation }: Props) {
     return (
         <View style={styles.container}>
-            {console.log("qfeqzvze")}
             <Text>Histo View</Text>
+            <Button
+                onPress={() => navigate('Details')}
+                title="Go Details"
+                color="#841584"
+            />
         </View>
     )
 }
@@ -26,6 +23,5 @@ const styles = StyleSheet.create({
         flex: 1,
         height: 200,
         flexDirection: "row",
-        backgroundColor: "black"
     },
 });
