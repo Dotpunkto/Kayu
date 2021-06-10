@@ -12,3 +12,7 @@ type Product = {
     product_name: string
     quantity: string
 }
+
+interface Products {
+    products: Product[]
+}
