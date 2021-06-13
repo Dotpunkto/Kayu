@@ -6,7 +6,15 @@ const ProfileStack = createStackNavigator();
 
 export default function ProfileStackScreen() {
     return (
-        <ProfileStack.Navigator>
+        <ProfileStack.Navigator screenOptions={{
+            headerStyle: {
+                backgroundColor: '#f78050',
+            },
+            headerTitleStyle: {
+                fontWeight: 'bold'
+            },
+            headerTintColor: 'white',
+        }}>
             <ProfileStack.Screen name="Profile" component={Profile} />
         </ProfileStack.Navigator>
     )

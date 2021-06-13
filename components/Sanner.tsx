@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StyleSheet, Text, View, Button } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { BarCodeScanner } from 'expo-barcode-scanner'
 
 export default function Scanner({ redirect }: any) {
@@ -15,7 +16,7 @@ export default function Scanner({ redirect }: any) {
         })()
     }, [])
 
-    const handleBarCodeScanned = ({ type, data }: any) => {
+    const handleBarCodeScanned = async ({ type, data }: any) => {
         setScanned(true)
         redirect(type, data)
     }

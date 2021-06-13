@@ -8,7 +8,7 @@ export default function Scan() {
     const { navigate } = useNavigation()
 
     const redirectToDetails = (type: string, data: string) => {
-        navigate('Details', { ProductId: data })
+        navigate('Details', { ProductCode: data })
     }
 
     return (

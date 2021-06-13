@@ -5,7 +5,8 @@ type Product = {
     image_url: string
     ingredients: Array<Ingredient>
     ingredients_text: string
-    nutriscore_grade: String
+    nutriscore_grade: string
+    categories: Array<string>
     nutriscore_score: number
     nutriscore_data: { score: string }
     origins: string
